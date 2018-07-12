@@ -1,0 +1,16 @@
+Icons used are from the following creators:
+
+-Windy icon-
+Author: Mr J
+Link: https://www.iconfinder.com/icons/274753/forecast_weather_windy_icon
+Licence: Nonspecific (free for commercial use with attribution)
+
+-Cloud Error icon-
+Author: Vecteezy
+Link: https://www.iconfinder.com/icons/532248/cloud_cloud_computing_error_rejected_sign_icon
+Licence: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+
+-All other weather icons-
+Author: Lorezo Carbonell
+Link: https://www.iconfinder.com/iconsets/weather-49
+Licence: Creative Commons (Attribution 3.0 Unported)

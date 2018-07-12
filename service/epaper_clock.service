@@ -1,0 +1,10 @@
+[Unit]
+Description=Python Epaper Clock
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/epaper_clock.sh
+
+[Install]
+WantedBy=multi-user.target

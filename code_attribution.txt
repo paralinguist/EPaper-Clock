@@ -1,0 +1,2 @@
+Technique for determining various PIL text height from this SO thread:
+https://stackoverflow.com/questions/43060479/how-to-get-the-font-pixel-height-using-pil-imagefont

@@ -1,0 +1,21 @@
+Default date/time font: Bitsumishi
+Downloaded from: https://www.dafont.com/bitsumishi.font
+Licence is free for non-commercial use - see readme included in font specific
+folder (although website is no longer up).
+I would like to point out that this font has been expanded and reworked and is
+available commercially here:
+http://www.cheapprofonts.com/Bitsumishi_Pro
+
+Default timetable font: 04b_03
+Downloaded from: https://www.dafont.com/04b-03.font
+The licence is unclear - accompanying image indicates "use as you wish", but 
+also includes "all rights reserved" (see included directory).
+Author site: http://04.jp.org/
+(which caused a wave of nostalgia to wash over me - "best viewed in Netscape 
+Navigator or IE4"!)
+
+Default weather font: Daniel (bold)
+Downloaded from: https://www.dafont.com/daniel.font
+Licence is free for any use, author does like to be kept in the loop:
+http://goodreasonblog.com/fontery/
++1 for fun linguists
