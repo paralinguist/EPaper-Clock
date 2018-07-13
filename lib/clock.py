@@ -181,7 +181,7 @@ def push_face(weather):
   weather_tf = ImageFont.truetype(WEATHER_FONT, weather_font_size)
   weather_text_width, weather_text_height = weather_tf.getsize(weather_text)
   weather_text_x = EPD_WIDTH - IMAGE_SIZE + (IMAGE_SIZE - weather_text_width) // 2
-  weather_text_position = (weather_text_x, IMAGE_SIZE - weather_text_height)
+  weather_text_position = (weather_text_x, IMAGE_SIZE)
   draw.text(weather_text_position, weather_text, font = weather_tf, fill = 0)
   degree_top = (weather_text_position[0] + weather_text_width, weather_text_position[1])
   degree_bottom = (degree_top[0] + 7, degree_top[1] + 7)
