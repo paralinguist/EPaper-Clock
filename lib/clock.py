@@ -80,7 +80,7 @@ def write_session_text(text_y, text, cell_width, canvas):
   return text_y
 
 def get_sessions():
-  tt_img = Image.new('1', (EPD_WIDTH, 88), 1)
+  tt_img = Image.new('1', (EPD_WIDTH, TT_HEIGHT), 1)
   tt_connection = sqlite3.connect(LIB_DIR + 'timetable.sqlite')
   tt_connection.row_factory = sqlite3.Row
   tt_cursor = tt_connection.cursor()
@@ -100,6 +100,7 @@ def get_sessions():
     start_time = datetime.datetime.strptime(row['start_time'], '%H%M')
     end_time = datetime.datetime.strptime(row['end_time'], '%H%M')
     title = row['title']
+    session_number = row['session_number']
     year = row['year_group']
     event = row['event_details']
     location = row['location']
@@ -109,10 +110,10 @@ def get_sessions():
       cell_width = lng
     else:
       cell_width = shrt
-    session_img = Image.new('1', (cell_width, 88), 1)
+    session_img = Image.new('1', (cell_width, TT_HEIGHT), 1)
     session_canvas = ImageDraw.Draw(session_img)
     text_y = 0
-    session_canvas.line((0, 0, 0, 88))
+    session_canvas.line((0, 0, 0, TT_HEIGHT))
     text_y = write_session_text(text_y, title, cell_width-2, session_canvas)
     if year:
       text_y = write_session_text(text_y, year, cell_width, session_canvas)
@@ -142,7 +143,7 @@ def push_face(weather):
   image = Image.new('1', (EPD_WIDTH, EPD_HEIGHT), 1)
   draw = ImageDraw.Draw(image)
   tt_img = get_sessions()
-  image.paste(tt_img, (0,384-88))
+  image.paste(tt_img, (0,EPD_HEIGHT-TT_HEIGHT))
   time_y = TOP_MARGIN
   time_x = LEFT_MARGIN
   #draw.rectangle(((LEFT_MARGIN, TOP_MARGIN), (640-256, 296)))
@@ -177,7 +178,7 @@ def push_face(weather):
   weather_img = Image.open(LIB_DIR + weather.img, 'r')
   image.paste(weather_img, (EPD_WIDTH-IMAGE_SIZE,TOP_MARGIN), mask=weather_img)
   weather_text = weather.condition.text + ', ' + weather.condition.temp
-  weather_font_size = max_font_size(WEATHER_FONT, weather_text + 'o', IMAGE_SIZE, 0)
+  weather_font_size = max_font_size(WEATHER_FONT, weather_text + 'o', IMAGE_SIZE, EPD_HEIGHT-IMAGE_SIZE-TT_HEIGHT)
   weather_tf = ImageFont.truetype(WEATHER_FONT, weather_font_size)
   weather_text_width, weather_text_height = weather_tf.getsize(weather_text)
   weather_text_x = EPD_WIDTH - IMAGE_SIZE + (IMAGE_SIZE - weather_text_width) // 2
